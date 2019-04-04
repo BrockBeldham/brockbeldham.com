@@ -1,9 +1,9 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEnvelope,
   faFileAlt
-} from '@fortawesome/free-solid-svg-icons'
+} from '@fortawesome/free-solid-svg-icons';
 import {
   faTwitter,
   faGithub,
@@ -75,8 +75,9 @@ const Home = () => {
             </a>
           </li>
           <li className='icon-list-item'>
-            <a href='static/docs/resume.pdf'
+            <a href={process.env.PUBLIC_URL + '/assets/resume.pdf'}
               target='_blank'
+              rel='noopener noreferrer'
               download
               className='icon-link'
               data-event-category='home'

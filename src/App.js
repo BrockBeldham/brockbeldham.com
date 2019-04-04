@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import './App.scss';
 import Header from './Header';
 import Home from './Home';
+import Work from './Work';
 
 
 class App extends Component {
@@ -51,22 +52,6 @@ const FadingRoute = ({ component: Component, ...rest }) => (
     </FadeIn>
   )}/>
 )
-
-// function Home() {
-//   return (
-//     <div>
-//       <h2>Home</h2>
-//     </div>
-//   );
-// }
-
-function Work() {
-  return (
-    <div>
-      <h2>Work</h2>
-    </div>
-  );
-}
 
 function About() {
   return (
