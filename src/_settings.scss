@@ -1,0 +1,48 @@
+// Project Variables
+// =================
+
+// Breakpoints
+
+$layout_lg_desktop_min : 1280px;
+$layout_sm_desktop_max : 1279px;
+$layout_sm_desktop_min : 960px;
+$layout_tablet_max : 959px;
+$layout_tablet_min : 769px;
+$layout_smtablet_max : 768px;
+$layout_smtablet_min : 480px;
+$layout_phone_max : 479px;
+
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Lato:100,300,400,700');
+
+$font_size : 18px;
+
+@mixin font-bold {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-weight: 700;
+}
+
+@mixin font-regular {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-weight: 400;
+}
+
+@mixin font-light {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-weight: 300;
+}
+
+@mixin font-hairline {
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-weight: 100;
+}
+
+// Colours
+
+$color_default : #182232;
+$color_black : #303030;
+$color_white : #fff;
+$color_bg_grey : #e2e2e2;
+$color_grey : #c6c6c6;
+$color_blue : #3c76d4;
+$color_orange : #ef9030;

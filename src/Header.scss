@@ -1,0 +1,133 @@
+@import "./settings";
+
+.hdr {
+  box-sizing: border-box;
+  padding: 20px 40px;
+  background: $color_bg_grey;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo-details {
+  padding-left: 30px;
+
+  a {
+    &:active,
+    &:focus {
+      text-decoration: none;
+      color: $color_default;
+    }
+
+    &:hover {
+      color: $color_default;
+      text-decoration: none;
+    }
+  }
+}
+
+.nav-list-item {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 5px;
+}
+
+.nav-link {
+  padding: 5px 2px;
+  font-size: 24px;
+  position: relative;
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    background-color: $color_default;
+    transition: all 0.1s;
+  }
+
+  &:hover::before {
+    height: 5px;
+    background-color: $color_blue;
+  }
+
+  &::after {
+    display: none;
+  }
+}
+
+@media screen and (min-width: $layout_tablet_min) and (max-width: $layout_tablet_max) {
+  .hdr {
+    padding: 20px;
+  }
+
+  .logo-link {
+    display: block;
+    width: 80px;
+  }
+
+  .logo-details {
+    padding-left: 85px;
+  }
+}
+
+@media screen and (min-width: $layout_smtablet_min) and (max-width: $layout_smtablet_max) {
+  .hdr {
+    padding: 10px;
+  }
+
+  .logo-link {
+    display: block;
+    width: 50px;
+  }
+
+  .logo-details {
+    padding-left: 65px;
+  }
+
+  .nav-list-item {
+    margin: 0;
+  }
+
+  .nav-link {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: $layout_phone_max) {
+  .hdr {
+    flex-flow: column;
+    padding: 10px;
+  }
+
+  .logo {
+    float: none;
+    width: 290px;
+    margin: 0 auto;
+  }
+
+  .logo-link {
+    display: block;
+    width: 60px;
+  }
+
+  .logo-details {
+    padding-left: 75px;
+  }
+
+  .nav {
+    margin-top: 15px;
+  }
+
+  .nav-link {
+    font-size: 20px;
+  }
+}

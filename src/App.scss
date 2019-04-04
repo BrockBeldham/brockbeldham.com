@@ -1,0 +1,359 @@
+@import "./settings";
+
+// TYPOGRAPHY
+// ==========
+
+html, body {
+  height: 100%;
+}
+
+html {
+  @include font-light;
+  font-size: $font_size;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  background: $color_bg_grey;
+  color: $color_default;
+  overflow-x: hidden;
+  perspective: 1500px;
+}
+
+
+// Header
+// -------------------------------------------------
+
+h1, h2, h3, h4, h5, h6 {
+}
+
+h1 {
+  @include font-hairline;
+  font-size: 72px;
+  line-height: 0.7em;
+  margin-bottom: 5px;
+}
+
+h2 {
+  font-size: 60px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+h4 {
+  font-size: 36px;
+  margin-left: 5px;
+}
+
+h5 {
+  font-size: 30px;
+  margin-bottom: 15px;
+}
+
+h6 {
+}
+
+// Inline and Text Blocks
+// -------------------------------------------------
+
+p {
+  margin-bottom: 20px;
+}
+
+em {
+}
+
+hr {
+  margin: 25px 0;
+}
+
+
+// Anchors
+// -------------------------------------------------
+
+a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  color: $color_default;
+  transition: all 0.25s;
+
+  &:hover,
+  &:active,
+  &:focus {
+    text-decoration: none;
+    color: $color_blue;
+
+    &::after {
+      background: $color_blue;
+    }
+  }
+
+  &::after {
+    content : '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 1px;
+    background: $color_black;
+    right: 0;
+    opacity: 1;
+    transition: all 0.25s;
+  }
+
+  &:hover::after {
+    width: 0;
+    opacity: 0;
+  }
+}
+
+// Images
+// ---------------------------------------------------
+
+img {
+  max-width: 100%;
+}
+
+// --- Forms -----------------------------------------
+label {
+  display: block;
+  margin-bottom: 10px;
+  padding-left: 2px;
+  width: 100%;
+}
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+select,
+textarea {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+textarea {
+  resize: none;
+}
+
+input[type=text],
+input[type=password],
+input[type=number],
+input[type=email] {
+  padding: 5px 10px;
+  border: 3px solid $color_black;
+  height: 50px;
+  color: $color_black;
+}
+
+//checkbox is 'invisible', but still tabable
+input[type="checkbox"] {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  opacity: 0;
+
+  //the label is actually out clickable object because of the 'for' attr
+  & + label {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    position: relative;
+
+    //the :before object is the 'checkbox' that we see
+    &::before {
+      box-sizing: border-box;
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      background: $color_white;
+      margin-right: 20px;
+      content : '';
+      vertical-align: middle;
+      position: absolute;
+      left: 0;
+      top: -7px;
+    }
+  }
+
+  //checked styles
+  &:checked + label::before {
+    background: url() center no-repeat $color_white;
+  }
+
+  //shadow for accessabilty focus
+  &:focus + label::before {
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.8);
+  }
+}
+
+.frm-select {
+  overflow: hidden;
+  position: relative;
+  background: $color_white;
+  border: 3px solid $color_black;
+
+  .frm-select-btn {
+    width: 50px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    .frm-select-btn-triangle {
+      width: 0px;
+      height: 0px;
+      border-style: solid;
+      border-width: 10px 10px 0px;
+      border-color: $color_black transparent transparent;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      margin-top: -3px;
+      margin-left: -8px;
+    }
+  }
+
+  select {
+    box-sizing: border-box;
+    border: 0;
+    height: 44px;
+    width: 125%;
+    padding: 5px 10px;
+    font-size: 24px;
+    color: $color_black;
+    cursor: pointer;
+    text-indent: 0.01px;
+    z-index: 1;
+    position: relative;
+    background: transparent;
+  }
+}
+
+.container {
+  // min-height: 100%;
+  // width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+  // position: absolute;
+  // z-index: 1;
+  // // display: none;
+  // background: $color_bg_grey;
+  // box-shadow: 0 0 5px 0 rgba($color_black, 0.3);
+
+  // &#home {
+  //   padding: 200px 40px 0;
+  // }
+
+  // &.active-page {
+  //   z-index: 2;
+  //   display: block;
+  //   top: 0;
+  // }
+}
+
+// .wrapper {
+//   height: 100%;
+//   width: 100%;
+//   background: url('/images/bg-black.png') $color_black;
+// }
+
+.clear-fix::after {
+  content : "";
+  display: table;
+  clear: both;
+}
+
+.icon-link::after {
+    display: none;
+}
+
+@media screen and (min-width: $layout_sm_desktop_min) and (max-width: $layout_sm_desktop_max) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h4 {
+    font-size: 27px;
+  }
+}
+
+@media screen and (min-width: $layout_tablet_min) and (max-width: $layout_tablet_max) {
+  h1 {
+    font-size: 50px;
+  }
+
+  h3 {
+    font-size: 22px;
+  }
+
+  h4 {
+    font-size: 27px;
+  }
+}
+
+@media screen and (min-width: $layout_smtablet_min) and (max-width: $layout_smtablet_max) {
+  h1 {
+    font-size: 32px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  h4 {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: $layout_phone_max) {
+  html {
+    font-size: 16px;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: 18px;
+  }
+
+  h4 {
+    font-size: 20px;
+    margin-left: 2px;
+  }
+
+  h5 {
+    font-size: 24px;
+  }
+
+  h6 {
+    font-size: 18px;
+  }
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  .container {
+    padding: 20px;
+  }
+}
