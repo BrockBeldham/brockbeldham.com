@@ -75,7 +75,7 @@ const Home = () => {
             </a>
           </li>
           <li className='icon-list-item'>
-            <a href={process.env.PUBLIC_URL + '/assets/resume.pdf'}
+            <a href={`${process.env.PUBLIC_URL}/assets/resume.pdf`}
               target='_blank'
               rel='noopener noreferrer'
               download

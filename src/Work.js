@@ -1,4 +1,10 @@
 import React, { Component } from 'react';
+// import FadeIn from 'react-fade-in';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
+
+import WorkContent from './WorkContent';
+import './Work.scss';
 
 class Work extends Component {
   constructor (props) {
@@ -7,8 +13,8 @@ class Work extends Component {
       work: [
         {
           id : 'Union',
-          img : 'static/img/work/work-unn-content.png',
-          thumb : 'static/img/work/work-unn-thumb.png',
+          img : 'work-unn-content.png',
+          thumb : 'work-unn-thumb.png',
           title : 'Union',
           client : 'Union Creative',
           role : 'Lead Front-End Developer',
@@ -35,8 +41,8 @@ class Work extends Component {
         },
         {
           id : 'NotYet',
-          img : 'static/img/work/work-mpg-content.png',
-          thumb : 'static/img/work/work-mpg-thumb.png',
+          img : 'work-mpg-content.png',
+          thumb : 'work-mpg-thumb.png',
           title : 'Not-Yet.ca',
           client : 'Mount Pleasant Group',
           role : 'Lead Front-End Developer',
@@ -49,8 +55,8 @@ class Work extends Component {
         },
         {
           id : 'Quitbit',
-          img : 'static/img/work/work-qbt-content.png',
-          thumb : 'static/img/work/work-qbt-thumb.png',
+          img : 'work-qbt-content.png',
+          thumb : 'work-qbt-thumb.png',
           title : 'Quitbit',
           client : 'Mount Pleasant Group',
           role : 'Developer',
@@ -81,8 +87,8 @@ class Work extends Component {
         },
         {
           id : 'kraftProjectPlay',
-          img : 'static/img/work/work-kpp-content.png',
-          thumb : 'static/img/work/work-kpp-thumb.png',
+          img : 'work-kpp-content.png',
+          thumb : 'work-kpp-thumb.png',
           title : 'Kraft Heinz Project Play 2016',
           client : 'Kraft Canada',
           role : 'Developer',
@@ -95,8 +101,8 @@ class Work extends Component {
         },
         {
           id : 'MeadJohnson',
-          img : 'static/img/work/work-mjn-content.png',
-          thumb : 'static/img/work/work-mjn-thumb.png',
+          img : 'work-mjn-content.png',
+          thumb : 'work-mjn-thumb.png',
           title : 'Mead Johnson Corporate Site',
           client : 'Mead Johnson',
           role : 'Developer',
@@ -109,8 +115,8 @@ class Work extends Component {
         },
         {
           id : 'kraftHockeyville',
-          img : 'static/img/work/work-khv-content.png',
-          thumb : 'static/img/work/work-khv-thumb.png',
+          img : 'work-khv-content.png',
+          thumb : 'work-khv-thumb.png',
           title : 'Kraft Hockeyville 2016',
           client : 'Kraft Canada',
           role : 'Developer',
@@ -123,8 +129,8 @@ class Work extends Component {
         },
         {
           id : 'buildForce',
-          img : 'static/img/work/work-bdf-content.png',
-          thumb : 'static/img/work/work-bdf-thumb.png',
+          img : 'work-bdf-content.png',
+          thumb : 'work-bdf-thumb.png',
           title : 'Build Force',
           client : 'Build Force',
           role : 'Designer/Developer',
@@ -137,8 +143,8 @@ class Work extends Component {
         },
         {
           id : 'solarSystem',
-          img : 'static/img/work/work-sol-content.png',
-          thumb : 'static/img/work/work-sol-thumb.png',
+          img : 'work-sol-content.png',
+          thumb : 'work-sol-thumb.png',
           title : 'Three.js Solar System',
           client : 'Personal',
           role : 'Creator',
@@ -151,8 +157,8 @@ class Work extends Component {
         },
         {
           id : 'slideJar',
-          img : 'static/img/work/work-sj-content.png',
-          thumb : 'static/img/work/work-sj-thumb.png',
+          img : 'work-sj-content.png',
+          thumb : 'work-sj-thumb.png',
           title : 'Slide Jar Logo',
           client : 'SlideJar',
           role : 'Designer',
@@ -164,33 +170,44 @@ class Work extends Component {
             'The colour of orange was chosen because of it\'s close association to other presentation software ie. Microsoft Powerpoint and Google Slides. In order to not get lost amongst these secondary competitors I went with a complimentary blue as the primary colour.'
           ]
         }
-      ]
+      ],
+      activeWork: null
     }
   };
 
   render () {
+    console.log(this.state.activeWork);
     return (
-      <section id='work' class='container'>
-        <div class='work'>
+      <section id='work' className='container'>
+        <div className='work'>
           <h3>Here are some things I'm proud to have been a part of:</h3>
-          <div class='pop'>
-            <div class='pop-content'></div>
+          <div className={`pop${this.state.activeWork ? ' pop-open' : ''}`}>
+            <div className='pop-content'>
+              {/* <FadeIn> */}
+                <WorkContent content={this.state.activeWork} onClose={() => this.setState({ activeWork: null })} />
+              {/* </FadeIn> */}
+            </div>
           </div>
-          <ul class='work-list'>
-            {/* <li class="work-list-item"
-            data-work-info
-            data-event-category="work"
-            data-event-action="details"
-            data-event-label="workPiece_<%= id %>"
-            id="workPiece<%= index %>">
-                <div class="work-overlay"></div>
-                <img src="<%= thumb %>" alt="<%= title %>">
-                <div class="work-list-item-cnt">
-                    <i class="fa fa-plus"></i>
-                    <h4><%= title %></h4>
-                    <h5><%= role %></h5>
+          <ul className='work-list'>
+            {this.state.work.map((piece, index) => (
+              <li className="work-list-item"
+                data-event-category="work"
+                data-event-action="details"
+                data-event-label={`workPiece_${piece.id}`}
+                key={index}
+                onClick={({ target }) => this.setState({ activeWork: this.state.work[index]})}
+              >
+                <div className="work-overlay"></div>
+                <img src={`${process.env.PUBLIC_URL}/assets/work/${piece.thumb}`} alt={piece.title} />
+                <div className="work-list-item-cnt">
+                  <i className="fa fa-plus">
+                    <FontAwesomeIcon icon={faPlus} />
+                  </i>
+                  <h4>{piece.title}</h4>
+                  <h5>{piece.role}</h5>
                 </div>
-            </li> */}
+              </li>
+            ))}
           </ul>
         </div>
       </section>
