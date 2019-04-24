@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import FadeIn from 'react-fade-in';
+import FadeIn from 'react-fade-in';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
@@ -173,21 +173,34 @@ class Work extends Component {
       ],
       activeWork: null
     }
+
+    this.popRef = React.createRef();
+  };
+
+  workItemClick (target, index) {
+    this.setState({ activeWork: this.state.work[index]}, () => {
+      window.scrollTo({
+        top: this.popRef.current.offsetParent.offsetTop + 50,
+        left: 0,
+        behavior: 'smooth'
+      });
+    });
   };
 
   render () {
-    console.log(this.state.activeWork);
     return (
       <section id='work' className='container'>
         <div className='work'>
           <h3>Here are some things I'm proud to have been a part of:</h3>
-          <div className={`pop${this.state.activeWork ? ' pop-open' : ''}`}>
-            <div className='pop-content'>
-              {/* <FadeIn> */}
-                <WorkContent content={this.state.activeWork} onClose={() => this.setState({ activeWork: null })} />
-              {/* </FadeIn> */}
-            </div>
-          </div>
+          {this.state.activeWork &&
+            <FadeIn>
+              <div className='pop pop-open' ref={this.popRef}>
+                <div className='pop-content'>
+                  <WorkContent content={this.state.activeWork} onClose={() => this.setState({ activeWork: null })} />
+                </div>
+              </div>
+            </FadeIn>
+          }
           <ul className='work-list'>
             {this.state.work.map((piece, index) => (
               <li className="work-list-item"
@@ -195,7 +208,7 @@ class Work extends Component {
                 data-event-action="details"
                 data-event-label={`workPiece_${piece.id}`}
                 key={index}
-                onClick={({ target }) => this.setState({ activeWork: this.state.work[index]})}
+                onClick={({ target }) => this.workItemClick(target, index)}
               >
                 <div className="work-overlay"></div>
                 <img src={`${process.env.PUBLIC_URL}/assets/work/${piece.thumb}`} alt={piece.title} />
