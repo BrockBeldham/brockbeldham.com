@@ -6,7 +6,7 @@ import './App.scss';
 import Header from './Header';
 import Home from './Home';
 import Work from './Work';
-
+import About from './About';
 
 class App extends Component {
   render() {
@@ -14,32 +14,11 @@ class App extends Component {
       <Fragment>
         <Router>
           <Header />
-
-          {/* <Route path='/' component={Home} />
-          <Route path='/work' component={Work} />
-          <Route path='/about' component={About} />
-          <Route path='/contact' component={Topics} /> */}
           <FadingRoute exact path="/" component={Home}/>
           <FadingRoute path="/work" component={Work}/>
           <FadingRoute path="/about" component={About}/>
           <FadingRoute path="/contact" component={Topics}/>
         </Router>
-        {/* <div className='App'>
-          <header className='App-header'>
-            <img src={logo} className='App-logo' alt='logo' />
-            <p>
-              Edit <code>src/App.js</code> and save to reload.
-            </p>
-            <a
-              className='App-link'
-              href='https://reactjs.org'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              Learn React
-            </a>
-          </header>
-        </div> */}
       </Fragment>
     );
   }
@@ -52,14 +31,6 @@ const FadingRoute = ({ component: Component, ...rest }) => (
     </FadeIn>
   )}/>
 )
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
 
 function Topics({ match }) {
   return (

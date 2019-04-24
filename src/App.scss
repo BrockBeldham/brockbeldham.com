@@ -102,8 +102,9 @@ a {
     height: 1px;
     bottom: 1px;
     background: $color_black;
-    right: 0;
+    left: 50%;
     opacity: 1;
+    transform: translateX(-50%);
     transition: all 0.25s;
   }
 
