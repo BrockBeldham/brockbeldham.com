@@ -12,99 +12,6 @@
   position: relative;
 }
 
-.work-list-item {
-  width: 30%;
-  margin: 0 -4px 40px 5%;
-  display: inline-block;
-  padding: 0;
-  border: 1px solid $color_grey;
-  box-sizing: border-box;
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.5s;
-
-  &:nth-child(3n + 1) {
-    margin-left: 0;
-  }
-
-  &:hover {
-    .work-overlay {
-      opacity: 1;
-    }
-
-    .work-list-item-cnt {
-      transform: translate(0, 20px);
-    }
-
-    img {
-      transform: translate(5%, 5%) scale(1.2);
-      transition: all 5s;
-    }
-  }
-
-  img {
-    display: block;
-    width: 110%;
-    transform-origin: 30% 30%;
-    transform: translate(0, 0) scale(1);
-    transition: all 1s;
-  }
-
-  &.view-work {
-    z-index: 999;
-    width: 100%;
-    height: 100%;
-    border-width: 0;
-    margin: 0;
-    top: 0;
-    left: 0;
-  }
-}
-
-.work-overlay {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding-top: 50%;
-  background: rgba(24, 34, 50, 0.6);
-  opacity: 0;
-  transition: all 0.2s;
-  text-align: center;
-  z-index: 1;
-}
-
-.work-list-item-cnt {
-  padding: 10px 10px 30px;
-  background: $color_white;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  transition: all 0.2s cubic-bezier(0.15, 0.03, 0.62, 1.2);
-  transform: translate(0, 200px);
-
-  h4 {
-    @include font-regular;
-    font-size: 24px;
-    margin: 0 0 5px;
-  }
-
-  h5 {
-    font-size: 20px;
-    margin-bottom: 5px;
-  }
-
-  .fa-plus {
-    font-size: 24px;
-    float: right;
-    margin: 5px 0 0 0;
-  }
-}
-
 .fa-info {
   font-size: 60px;
   width: 80px;
@@ -202,6 +109,10 @@
       &:hover {
         color: $color_blue;
       }
+    }
+
+    .fa {
+      margin-left: 10px;
     }
   }
 

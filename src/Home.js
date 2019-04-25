@@ -10,6 +10,8 @@ import {
   faLinkedinIn
 } from '@fortawesome/free-brands-svg-icons';
 
+import IconItem from './IconItem';
+
 import './Home.scss';
 
 const Home = () => {
@@ -18,77 +20,51 @@ const Home = () => {
       <div className='home'>
         <h2>Hi, my name is Brock. I like to make <strong>innovative</strong>, <strong>engaging</strong>, <strong>and awesome</strong> web applications. Check out my work and let's start something awesome.</h2>
         <ul className='icon-list'>
-          <li className='icon-list-item'>
-            <a href='mailto:brockbeldham@gmail.com'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='icon-link'
-              data-event-category='home'
-              data-event-action='contacts'
-              data-event-label='email'
-            >
-              <i className='fa'>
-                <FontAwesomeIcon icon={faEnvelope} />
-              </i>
-            </a>
-          </li>
-          <li className='icon-list-item'>
-            <a href='https://twitter.com/BrockBeldham'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='icon-link'
-              data-event-category='home'
-              data-event-action='contacts'
-              data-event-label='twitter'
-            >
-              <i className='fa'>
-                <FontAwesomeIcon icon={faTwitter} />
-              </i>
-            </a>
-          </li>
-          <li className='icon-list-item'>
-            <a href='https://github.com/BrockBeldham'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='icon-link'
-              data-event-category='home'
-              data-event-action='contacts'
-              data-event-label='github'
-            >
-              <i className='fa'>
-                <FontAwesomeIcon icon={faGithub} />
-              </i>
-            </a>
-          </li>
-          <li className='icon-list-item'>
-            <a href='https://www.linkedin.com/profile/view?id=98919640'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='icon-link'
-              data-event-category='home'
-              data-event-action='contacts'
-              data-event-label='linkedin'
-            >
-              <i className='fa'>
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </i>
-            </a>
-          </li>
-          <li className='icon-list-item'>
-            <a href={`${process.env.PUBLIC_URL}/assets/resume.pdf`}
-              target='_blank'
-              rel='noopener noreferrer'
-              download
-              className='icon-link'
-              data-event-category='home'
-              data-event-action='contacts'
-              data-event-label='resume'
-            >
-              <i className='fa'>
-                <FontAwesomeIcon icon={faFileAlt} />
-              </i>
-            </a>
-          </li>
+          <IconItem
+            href='mailto:brockbeldham@gmail.com'
+            evCat='about'
+            evAct='contacts'
+            evLab='email'
+            icon={faEnvelope}
+            newWindow
+            download={false}
+          />
+          <IconItem
+            href='https://twitter.com/BrockBeldham'
+            evCat='about'
+            evAct='contacts'
+            evLab='twitter'
+            icon={faTwitter}
+            newWindow
+            download={false}
+          />
+          <IconItem
+            href='https://github.com/BrockBeldham'
+            evCat='about'
+            evAct='contacts'
+            evLab='github'
+            icon={faGithub}
+            newWindow
+            download={false}
+          />
+          <IconItem
+            href='https://www.linkedin.com/profile/view?id=98919640'
+            evCat='about'
+            evAct='contacts'
+            evLab='linkedin'
+            icon={faLinkedinIn}
+            newWindow
+            download={false}
+          />
+          <IconItem
+            href={`${process.env.PUBLIC_URL}/assets/resume.pdf`}
+            evCat='about'
+            evAct='contacts'
+            evLab='resume'
+            icon={faFileAlt}
+            newWindow
+            download
+          />
         </ul>
       </div>
     </section>

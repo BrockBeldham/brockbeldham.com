@@ -1,5 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEnvelope,
   faFileAlt
@@ -9,6 +8,8 @@ import {
   faGithub,
   faLinkedinIn
 } from '@fortawesome/free-brands-svg-icons';
+
+import IconItem from './IconItem';
 
 import './About.scss';
 import logo from './images/main.jpg';
@@ -20,80 +21,54 @@ const About = () => {
         <div className='about-left'>
           <img src={logo} alt='Brock Beldham' />
           <ul className='icon-list'>
-            <li className='icon-list-item'>
-              <a href='mailto:brockbeldham@gmail.com'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='icon-link'
-                data-event-category='about'
-                data-event-action='contacts'
-                data-event-label='email'
-              >
-                <i className='fa'>
-                  <FontAwesomeIcon icon={faEnvelope} />
-                </i>
-              </a>
-            </li>
-            <li className='icon-list-item'>
-              <a href='https://twitter.com/BrockBeldham'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='icon-link'
-                data-event-category='about'
-                data-event-action='contacts'
-                data-event-label='twitter'
-              >
-                <i className='fa fa-twitter'>
-                  <FontAwesomeIcon icon={faTwitter} />
-                </i>
-              </a>
-            </li>
-            <li className='icon-list-item'>
-              <a href='https://github.com/BrockBeldham'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='icon-link'
-                data-event-category='about'
-                data-event-action='contacts'
-                data-event-label='github'
-              >
-                <i className='fa fa-github'>
-                  <FontAwesomeIcon icon={faGithub} />
-                </i>
-              </a>
-            </li>
-            <li className='icon-list-item'>
-              <a href='https://www.linkedin.com/profile/view?id=98919640'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='icon-link'
-                data-event-category='about'
-                data-event-action='contacts'
-                data-event-label='linkedin'
-              >
-                <i className='fa fa-linkedin'>
-                  <FontAwesomeIcon icon={faLinkedinIn} />
-                </i>
-              </a>
-            </li>
-            <li className='icon-list-item'>
-              <a href={`${process.env.PUBLIC_URL}/assets/resume.pdf`}
-                target='_blank'
-                rel='noopener noreferrer'
-                download
-                className='icon-link'
-                data-event-category='about'
-                data-event-action='contacts'
-                data-event-label='resume'
-              >
-                <i className='fa fa-file-text'>
-                  <FontAwesomeIcon icon={faFileAlt} />
-                </i>
-              </a>
-            </li>
+            <IconItem
+              href='mailto:brockbeldham@gmail.com'
+              evCat='about'
+              evAct='contacts'
+              evLab='email'
+              icon={faEnvelope}
+              newWindow
+              download={false}
+            />
+            <IconItem
+              href='https://twitter.com/BrockBeldham'
+              evCat='about'
+              evAct='contacts'
+              evLab='twitter'
+              icon={faTwitter}
+              newWindow
+              download={false}
+            />
+            <IconItem
+              href='https://github.com/BrockBeldham'
+              evCat='about'
+              evAct='contacts'
+              evLab='github'
+              icon={faGithub}
+              newWindow
+              download={false}
+            />
+            <IconItem
+              href='https://www.linkedin.com/profile/view?id=98919640'
+              evCat='about'
+              evAct='contacts'
+              evLab='linkedin'
+              icon={faLinkedinIn}
+              newWindow
+              download={false}
+            />
+            <IconItem
+              href={`${process.env.PUBLIC_URL}/assets/resume.pdf`}
+              evCat='about'
+              evAct='contacts'
+              evLab='resume'
+              icon={faFileAlt}
+              newWindow
+              download
+            />
           </ul>
           <p className='accolades'>
-            Developer <strong>/</strong> Designer <strong>/</strong> Painter <strong>/</strong> Artist <strong>/</strong> Gamer <strong>/</strong> Hockey&nbsp;Player <strong>/</strong> Snowboarder <strong>/</strong> Cyclist <strong>/</strong> Cook <strong>/</strong> Coffee&nbsp;Drinker <strong>/</strong> Beer&nbsp;Enthusiast
+            Father <strong>/</strong> Developer <strong>/</strong> Designer <strong>/</strong> Painter <strong>/</strong> Artist <strong>/</strong> Gamer <strong>/</strong> Hockey&nbsp;Player <strong>/</strong> Snowboarder <strong>/</strong> Cyclist <strong>/</strong> Cook <strong>/</strong> Coffee&nbsp;Drinker <strong>/</strong> Beer&nbsp;Enthusiast
           </p>
         </div>
         <div className='about-right'>

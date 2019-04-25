@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import FadeIn from 'react-fade-in';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
+import WorkItem from './WorkItem';
 import WorkContent from './WorkContent';
 import './Work.scss';
 
@@ -203,23 +202,11 @@ class Work extends Component {
           }
           <ul className='work-list'>
             {this.state.work.map((piece, index) => (
-              <li className="work-list-item"
-                data-event-category="work"
-                data-event-action="details"
-                data-event-label={`workPiece_${piece.id}`}
+              <WorkItem
+                content={piece}
+                onItemClick={(target) => this.workItemClick(target, index)}
                 key={index}
-                onClick={({ target }) => this.workItemClick(target, index)}
-              >
-                <div className="work-overlay"></div>
-                <img src={`${process.env.PUBLIC_URL}/assets/work/${piece.thumb}`} alt={piece.title} />
-                <div className="work-list-item-cnt">
-                  <i className="fa fa-plus">
-                    <FontAwesomeIcon icon={faPlus} />
-                  </i>
-                  <h4>{piece.title}</h4>
-                  <h5>{piece.role}</h5>
-                </div>
-              </li>
+              />
             ))}
           </ul>
         </div>
