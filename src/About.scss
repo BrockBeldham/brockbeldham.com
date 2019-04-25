@@ -5,10 +5,12 @@
   width: 100%;
   margin: 0 auto;
   padding-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-flow: row wrap;
 
   .about-left {
     width: 33.33%;
-    float: left;
     text-align: center;
   }
 
@@ -53,7 +55,6 @@
 
   .about-right {
     width: 66.66%;
-    float: right;
     padding: 0 0 0 30px;
     box-sizing: border-box;
   }
