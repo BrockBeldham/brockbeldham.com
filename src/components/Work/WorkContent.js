@@ -16,8 +16,8 @@ const WorkContent = ({ content, onClose }) => {
       </div>
       <div className='work-content-right'>
         <h5>
-          {content.link
-            ? <a href={content.link}
+          {content.link ? (
+            <a href={content.link}
               target='_blank'
               rel='noopener noreferrer'
               data-event-category='work'
@@ -29,8 +29,9 @@ const WorkContent = ({ content, onClose }) => {
                 <FontAwesomeIcon icon={faLink} />
               </i>
             </a>
-            : content.title
-          }
+          ) : (
+            content.title
+          )}
         </h5>
         <p><em>Client:</em> {content.client}</p>
         <p><em>Role:</em> {content.role}</p>
