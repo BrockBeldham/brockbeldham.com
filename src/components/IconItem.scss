@@ -21,31 +21,6 @@
   &:hover {
     background-color: $color_default;
   }
-
-  .about & {
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    font-size: 30px;
-  }
-}
-
-@media screen and (min-width: $layout_sm_desktop_min) and (max-width: $layout_sm_desktop_max) {
-  .about .fa {
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    font-size: 23px;
-  }
-}
-
-@media screen and (min-width: $layout_tablet_min) and (max-width: $layout_tablet_max) {
-  .about .fa {
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    font-size: 23px;
-  }
 }
 
 @media screen and (min-width: $layout_smtablet_min) and (max-width: $layout_smtablet_max) {
@@ -60,13 +35,6 @@
     line-height: 45px;
     font-size: 30px;
     margin: 0 5px;
-
-    .about & {
-      width: 45px;
-      height: 45px;
-      line-height: 45px;
-      font-size: 30px;
-    }
   }
 }
 
@@ -81,13 +49,5 @@
     line-height: 40px;
     font-size: 25px;
     margin: 0 5px;
-
-    .about & {
-      width: 35px;
-      height: 35px;
-      line-height: 35px;
-      font-size: 23px;
-      margin: 0 5px;
-    }
   }
 }

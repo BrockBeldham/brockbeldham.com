@@ -35,11 +35,25 @@
     padding: 0 0 0 30px;
     box-sizing: border-box;
   }
+
+  .fa {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 30px;
+  }
 }
 
 @media screen and (min-width: $layout_sm_desktop_min) and (max-width: $layout_sm_desktop_max) {
   .about {
     width: 100%;
+
+    .fa {
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      font-size: 23px;
+    }
   }
 }
 
@@ -64,6 +78,13 @@
         width: 0px;
         height: 0px;
       }
+    }
+
+    .fa {
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      font-size: 23px;
     }
   }
 }
@@ -97,6 +118,13 @@
       clear: both;
       padding-top: 20px;
     }
+
+    .fa {
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      font-size: 30px;
+    }
   }
 }
 
@@ -113,6 +141,14 @@
 
     .accolades {
       font-size: 14px;
+    }
+
+    .fa {
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      font-size: 23px;
+      margin: 0 5px;
     }
   }
 }
