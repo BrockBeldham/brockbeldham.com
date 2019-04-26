@@ -1,10 +1,11 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTwitter,
   faGithub,
   faLinkedinIn
 } from '@fortawesome/free-brands-svg-icons';
+
+import IconItem from '../IconItem';
 
 import './Contact.scss';
 
@@ -24,48 +25,33 @@ const About = () => {
           brock.beldham@gmail.com
         </a>
         <ul className='icon-list'>
-          <li className='icon-list-item'>
-            <a href='https://twitter.com/BrockBeldham'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='icon-link'
-              data-event-category='contact'
-              data-event-action='contacts'
-              data-event-label='twitter'
-            >
-              <i className='fa'>
-                <FontAwesomeIcon icon={faTwitter} />
-              </i>
-            </a>
-          </li>
-          <li className='icon-list-item'>
-            <a href='https://github.com/BrockBeldham'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='icon-link'
-              data-event-category='contact'
-              data-event-action='contacts'
-              data-event-label='github'
-            >
-              <i className='fa'>
-                <FontAwesomeIcon icon={faGithub} />
-              </i>
-            </a>
-          </li>
-          <li className='icon-list-item'>
-            <a href='https://www.linkedin.com/profile/view?id=98919640'
-              target='_blank'
-              rel='noopener noreferrer'
-              className='icon-link'
-              data-event-category='contact'
-              data-event-action='contacts'
-              data-event-label='linkedin'
-            >
-              <i className='fa'>
-                <FontAwesomeIcon icon={faLinkedinIn} />
-              </i>
-            </a>
-          </li>
+          <IconItem
+            href='https://twitter.com/BrockBeldham'
+            evCat='about'
+            evAct='contacts'
+            evLab='twitter'
+            icon={faTwitter}
+            newWindow
+            download={false}
+          />
+          <IconItem
+            href='https://github.com/BrockBeldham'
+            evCat='about'
+            evAct='contacts'
+            evLab='github'
+            icon={faGithub}
+            newWindow
+            download={false}
+          />
+          <IconItem
+            href='https://www.linkedin.com/profile/view?id=98919640'
+            evCat='about'
+            evAct='contacts'
+            evLab='linkedin'
+            icon={faLinkedinIn}
+            newWindow
+            download={false}
+          />
         </ul>
       </div>
     </section>
