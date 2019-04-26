@@ -1,4 +1,4 @@
-@import "./settings";
+@import "../../settings";
 
 .about {
   max-width: 1200px;
@@ -22,29 +22,6 @@
     margin: 20px 0;
   }
 
-  .icon-list-item {
-    display: inline-block;
-  }
-
-  .fa {
-    width: 45px;
-    height: 45px;
-    line-height: 45px;
-    font-size: 30px;
-    color: $color_white;
-    display: inline-block;
-    vertical-align: middle;
-    background-color: $color_blue;
-    transition: all 0.25s;
-    border-radius: 100%;
-    cursor: pointer;
-    margin: 0 10px;
-
-    &:hover {
-      background-color: $color_default;
-    }
-  }
-
   .accolades {
     @include font-light
     text-align: justify;
@@ -63,13 +40,6 @@
 @media screen and (min-width: $layout_sm_desktop_min) and (max-width: $layout_sm_desktop_max) {
   .about {
     width: 100%;
-
-    .fa {
-      width: 35px;
-      height: 35px;
-      line-height: 35px;
-      font-size: 23px;
-    }
   }
 }
 
@@ -83,13 +53,6 @@
 
     .about-left {
       width: 45%;
-    }
-
-    .fa {
-      width: 35px;
-      height: 35px;
-      line-height: 35px;
-      font-size: 23px;
     }
 
     .accolades {
@@ -129,11 +92,6 @@
       margin: 0;
     }
 
-    .icon-list-item {
-      display: block;
-      margin-bottom: 20px;
-    }
-
     .accolades {
       width: 100%;
       clear: both;
@@ -151,14 +109,6 @@
       float: none;
       width: 100%;
       padding: 0;
-    }
-
-    .fa {
-      width: 35px;
-      height: 35px;
-      line-height: 35px;
-      font-size: 23px;
-      margin: 0 5px;
     }
 
     .accolades {

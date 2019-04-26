@@ -9,10 +9,10 @@ import {
   faLinkedinIn
 } from '@fortawesome/free-brands-svg-icons';
 
-import IconItem from './IconItem';
+import IconItem from '../IconItem';
 
 import './About.scss';
-import logo from './images/main.jpg';
+import logo from '../../images/main.jpg';
 
 const About = () => {
   return (

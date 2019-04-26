@@ -1,0 +1,67 @@
+@import "../../settings";
+
+.work-content {
+  color: $color_bg_grey;
+
+  em {
+    @include font-hairline;
+    font-style: normal;
+  }
+
+  h5 {
+    @include font-bold;
+  }
+
+  a {
+    color: $color_bg_grey;
+    text-decoration: none;
+    transition: color 0.25s;
+
+    &:after {
+      display: none;
+    }
+
+    &:hover {
+      color: $color_blue;
+    }
+  }
+}
+
+.work-content-link-icon {
+  margin-left: 10px;
+}
+
+.work-content-left {
+  width: 50%;
+  float: left;
+}
+
+.work-content-right {
+  padding-left: 54%;
+}
+
+@media screen and (min-width: $layout_smtablet_min) and (max-width: $layout_smtablet_max) {
+  .work-content-left {
+    width: 100%;
+    float: none;
+  }
+
+  .work-content-right {
+    width: 100%;
+    padding-left: 0;
+    float: none;
+  }
+}
+
+@media screen and (max-width: $layout_phone_max) {
+  .work-content-left {
+    width: 100%;
+    float: none;
+  }
+
+  .work-content-right {
+    width: 100%;
+    float: none;
+    padding: 20px 0 0 0;
+  }
+}

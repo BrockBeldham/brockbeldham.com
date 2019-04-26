@@ -1,5 +1,4 @@
 import React from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faEnvelope,
   faFileAlt
@@ -10,7 +9,7 @@ import {
   faLinkedinIn
 } from '@fortawesome/free-brands-svg-icons';
 
-import IconItem from './IconItem';
+import IconItem from '../IconItem';
 
 import './Home.scss';
 

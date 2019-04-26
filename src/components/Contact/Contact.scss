@@ -1,14 +1,32 @@
-@import "./settings";
+@import "../../settings";
 
-.home {
+.contact {
+  max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
-  max-width: 900px;
-  text-align: center;
   padding-bottom: 20px;
+  text-align: center;
 
-  h2 {
-    font-size: 48px;
-    margin-bottom: 100px;
+  h3 {
+    font-size: 42px;
+  }
+
+  hr {
+    max-width: 100px;
+    margin: 0 auto 20px;
+    border-top: 2px solid $color_blue;
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+  }
+
+  .mail {
+    @include font-regular;
+    font-size: 24px;
+  }
+
+  .icon-list {
+    margin: 50px 0;
   }
 
   .icon-list-item {
@@ -35,50 +53,31 @@
   }
 }
 
-@media screen and (min-width: $layout_tablet_min) and (max-width: $layout_tablet_max) {
-  .home {
-    max-width: 100%;
-  }
-}
-
 @media screen and (min-width: $layout_smtablet_min) and (max-width: $layout_smtablet_max) {
-  .home {
-    max-width: 100%;
-
-    h2 {
-      font-size: 36px;
-      margin-bottom: 40px;
-    }
-
-    .fa {
-      width: 45px;
-      height: 45px;
-      line-height: 45px;
-      font-size: 30px;
-      margin: 0 5px;
-    }
+  .contact h3 {
+    font-size: 36px;
   }
 }
 
 @media screen and (max-width: $layout_phone_max) {
-  .home {
-    max-width: 100%;
-
-    h2 {
+  .contact {
+    h3 {
       font-size: 24px;
-      margin-bottom: 20px;
     }
 
-    .icon-list-item {
-      margin: 0 -4px 20px 0;
+    .mail {
+      font-size: 18px;
+    }
+
+    .icon-list {
+      margin: 20px 0;
     }
 
     .fa {
       width: 40px;
       height: 40px;
       line-height: 40px;
-      font-size: 25px;
-      margin: 0 5px;
+      font-size: 24px;
     }
   }
 }

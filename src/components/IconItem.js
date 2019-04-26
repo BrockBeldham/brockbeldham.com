@@ -1,6 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
+import './IconItem.scss';
+
 const IconItem = ({ href, evCat, evAct, evLab , icon, newWindow, download }) => {
   let newWindowProps = {};
   if (newWindow) {

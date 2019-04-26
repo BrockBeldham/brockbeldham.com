@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import FadeIn from 'react-fade-in';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import WorkItem from './WorkItem';
 import WorkContent from './WorkContent';
@@ -195,7 +197,12 @@ class Work extends Component {
             <FadeIn>
               <div className='pop pop-open' ref={this.popRef}>
                 <div className='pop-content'>
-                  <WorkContent content={this.state.activeWork} onClose={() => this.setState({ activeWork: null })} />
+                  <div className='pop-close' onClick={() => { this.setState({ activeWork: null }) }}>
+                    <i className='pop-close-icon'>
+                      <FontAwesomeIcon icon={faTimes} />
+                    </i>
+                  </div>
+                  <WorkContent content={this.state.activeWork} />
                 </div>
               </div>
             </FadeIn>

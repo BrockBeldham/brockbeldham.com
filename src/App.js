@@ -3,11 +3,11 @@ import FadeIn from 'react-fade-in';
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import './App.scss';
-import Header from './Header';
-import Home from './Home';
-import Work from './Work';
-import About from './About';
-import Contact from './Contact';
+import Header from './components/Header';
+import Home from './components/Home/Home';
+import Work from './components/Work/Work';
+import About from './components/About/About';
+import Contact from './components/Contact/Contact';
 
 class App extends Component {
   render() {

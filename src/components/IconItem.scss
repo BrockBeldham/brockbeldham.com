@@ -1,0 +1,93 @@
+@import "../settings";
+
+.icon-list-item {
+  display: inline-block;
+}
+
+.fa {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  font-size: 40px;
+  color: $color_white;
+  display: inline-block;
+  vertical-align: middle;
+  background-color: $color_blue;
+  transition: all 0.25s;
+  border-radius: 100%;
+  cursor: pointer;
+  margin: 0 10px;
+
+  &:hover {
+    background-color: $color_default;
+  }
+
+  .about & {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 30px;
+  }
+}
+
+@media screen and (min-width: $layout_sm_desktop_min) and (max-width: $layout_sm_desktop_max) {
+  .about .fa {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 23px;
+  }
+}
+
+@media screen and (min-width: $layout_tablet_min) and (max-width: $layout_tablet_max) {
+  .about .fa {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    font-size: 23px;
+  }
+}
+
+@media screen and (min-width: $layout_smtablet_min) and (max-width: $layout_smtablet_max) {
+  .about .icon-list-item {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .fa {
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    font-size: 30px;
+    margin: 0 5px;
+
+    .about & {
+      width: 45px;
+      height: 45px;
+      line-height: 45px;
+      font-size: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: $layout_phone_max) {
+  .icon-list-item {
+    margin: 0 -4px 20px 0;
+  }
+
+  .fa {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 25px;
+    margin: 0 5px;
+
+    .about & {
+      width: 35px;
+      height: 35px;
+      line-height: 35px;
+      font-size: 23px;
+      margin: 0 5px;
+    }
+  }
+}
