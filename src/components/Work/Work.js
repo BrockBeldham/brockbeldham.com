@@ -13,6 +13,20 @@ class Work extends Component {
     this.state = {
       work: [
         {
+          id : 'condoCulture',
+          img : 'work-cc-content.png',
+          thumb : 'work-cc-thumb.png',
+          title : 'Condo Culture',
+          client : 'Condo Culture',
+          role : 'Front-End Developer',
+          platform : 'Web App',
+          link : 'https://condoculture.ca',
+          summary : [
+            'I joined Condo Culture in effort to improve their web presence. The Real Estate space is highly competitive and to set themselves apart, Condo Culture set themselves up as a direct competitor to realtor.ca and I was part of the team to do it.',
+            'The homepage was redesigned with an autocomplete search component that pushed traffic directly to detail pages. The filter application then filtered results from a custom built api which pulled in content from our database, supplemented by data from CREA. Using React and Redux as a store, the results were rendered and filtered to help users find their ideal listing or building.'
+          ]
+        },
+        {
           id : 'Union',
           img : 'work-unn-content.png',
           thumb : 'work-unn-thumb.png',
@@ -108,20 +122,6 @@ class Work extends Component {
           summary : [
             'Kraft has been running the Kraft Hockeyville program for almost a decade. In the contest people from across Canada nominate their communities for a chance to win upgrades to their local hockey arena. The contest runs in phases. First, a community member fills out a form in order to nominate thier community. Next the community rallies around their nomination through social media with the use of a custom hashtag. Next, Kraft chooses their top 10 best nominations. Then, we entered the voting phase where the communities can vote for themselves an infinite amount of times. This was the most intense phase as we had around 100,000 hits to the site per day. Finally, there is a second round of voting between the top 2 where the winner wins $100,000 and an NHL pre-season game played in their community.',
             'Kraft Hockeyville was based on the Kraft Celebration Tour framework so it shared many of the same aspects and challenges as Kraft Project Play. The site was responsive of course, but majority of the content was user driven. We as developers had to account for all possible image sizes, users could upload youtube videos of their communities and many other things. Also, with each phase change the content on the site and design of the site changed. This was acheived with an extensive Django backend that swapped out templates based on a timeline. In order to keep voting smooth and avoid hits bringing the site down, the voting process was all ajax. This allowed us to have users vote infinitely without having a page reload everytime.'
-          ]
-        },
-        {
-          id : 'buildForce',
-          img : 'work-bdf-content.png',
-          thumb : 'work-bdf-thumb.png',
-          title : 'Build Force',
-          client : 'Build Force',
-          role : 'Designer/Developer',
-          platform : 'Web App',
-          link : null,
-          summary : [
-            'Build Force came to EdCetra Training in search of a new e-learning course. Their business had gone through a rebranding and their flash based e-learning course was out of date. Build Force wanted a new e-learning course that was redesigned to suit their brand and also had their previous flash modules translated to html/css/js based responsive design.',
-            'Because EdCetra was such a small business, I was in charge a both design and development of the project. I used their brand colours for most of the UI with elements of blueprints and construction. As a developer there wasn\'t a flash module I couldn\'t transfer to \'flashless\'.'
           ]
         },
         {
